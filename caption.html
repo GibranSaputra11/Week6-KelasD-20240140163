@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pembuat Caption - Latihan DOM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header class="main-header">
+      <h1>Form Pembuat Caption Otomatis</h1>
+      <br>      
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Katalog Produk</a>
+        <a href="caption.html" class="nav-link active">Pembuat Caption</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <h2>Form Input Data Produk</h2>
+      <form id="captionForm" novalidate>
+        <div class="form-group">
+          <label for="selectTemplate">Pilih Format Template:</label>
+          <select id="selectTemplate">
+            <option value="promo">Template 1: Promo Diskon Menarik</option>
+            <option value="flash_sale">Template 2: Flash Sale Terbatas</option>
+            <option value="new_arrival">Template 3: Rekomendasi Produk Baru</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="inputNama">Nama Barang <span class="required">*</span>:</label>
+          <input 
+            type="text" 
+            id="inputNama" 
+            placeholder="Contoh: Sepatu Sneakers Running"
+          >
+          <small id="errorNama" class="error-msg"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="inputHarga">Harga Barang ($) <span class="required">*</span>:</label>
+          <input 
+            type="number" 
+            id="inputHarga" 
+            placeholder="Contoh: 45.99" 
+            step="0.01"
+          >
+          <small id="errorHarga" class="error-msg"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="inputKategori">Kategori Barang:</label>
+          <input 
+            type="text" 
+            id="inputKategori" 
+            placeholder="Contoh: Sepatu Olahraga"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="inputCatatan">Catatan / Promo Tambahan (Opsional):</label>
+          <input 
+            type="text" 
+            id="inputCatatan" 
+            placeholder="Contoh: Diskon 20% &amp; Gratis Ongkir se-Indonesia!"
+          >
+        </div>
+
+        <div class="btn-group">
+          <button type="submit" id="btnGenerate">Buat Caption (Generate via DOM)</button>
+          <button type="button" id="btnReset">Reset Form</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Hasil Caption Siap Pakai</h2>
+      <div class="output-box">
+        <p id="outputCaption"><em>Silakan isi form di atas dan klik tombol "Buat Caption".</em></p>
+      </div>
+
+      <div style="margin-top: 15px;">
+        <button type="button" id="btnCopy" class="btn-copy">Salin Teks Caption</button>
+        <span id="copyStatus" style="font-size: 13px; color: #28a745; margin-left: 10px;"></span>
+      </div>
+    </section>
+  </div>
+
+  <script src="caption.js"></script>
+</body>
+</html>

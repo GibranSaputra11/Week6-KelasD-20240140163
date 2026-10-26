@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  color: #333333;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.main-header h1 {
+  font-size: 24px;
+  color: #222222;
+  margin-bottom: 5px;
+}
+
+.main-header p {
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid #0066cc;
+  color: #0066cc;
+  background-color: #ffffff;
+}
+
+.nav-link:hover {
+  background-color: #e6f0fa;
+}
+
+.nav-link.active {
+  background-color: #0066cc;
+  color: #ffffff;
+}
+
+/* Kotak / Card Sederhana */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #222222;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 8px;
+}
+
+.desc {
+  font-size: 13px;
+  color: #666666;
+  margin-bottom: 15px;
+}
+
+.template-preview {
+  background-color: #f9f9f9;
+  border-left: 4px solid #0066cc;
+  padding: 10px 14px;
+  border-radius: 0 4px 4px 0;
+  font-size: 13px;
+}
+
+.template-preview strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #444444;
+}
+
+.template-preview p {
+  color: #222222;
+  font-style: italic;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #444444;
+}
+
+.required {
+  color: #cc0000;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #0066cc;
+}
+
+.error-msg {
+  color: #cc0000;
+  font-size: 12px;
+  display: block;
+  margin-top: 4px;
+  min-height: 16px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid #0066cc;
+  background-color: #0066cc;
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0052a3;
+}
+
+#btnReset {
+  background-color: #ffffff;
+  color: #555555;
+  border-color: #cccccc;
+}
+
+#btnReset:hover {
+  background-color: #f0f0f0;
+  color: #222222;
+}
+
+.btn-copy {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-copy:hover {
+  background-color: #218838;
+}
+
+.output-box {
+  background-color: #fafafa;
+  border: 1px dashed #cccccc;
+  border-radius: 4px;
+  padding: 14px;
+  margin-top: 10px;
+}
+
+#outputCaption {
+  font-size: 15px;
+  word-break: break-word;
+}
+
+.filter-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 220px;
+}
+
+.filter-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #444444;
+}
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  border-color: #0066cc;
+}
+
+#statusInfo {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 15px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.product-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 12px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  background-color: #fafafa;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.product-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #222222;
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+
+.product-category {
+  font-size: 12px;
+  color: #0066cc;
+  text-transform: capitalize;
+  margin-bottom: 6px;
+}
+
+.product-price {
+  font-size: 14px;
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.btn-caption-link {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #0066cc;
+  color: #0066cc;
+  background-color: #f0f7ff;
+  margin-top: auto;
+}
+
+.btn-caption-link:hover {
+  background-color: #0066cc;
+  color: #ffffff;
+}

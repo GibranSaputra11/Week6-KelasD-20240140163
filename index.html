@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan JavaScript API - Katalog Produk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header class="main-header">
+      <h1>Katalog Produk</h1>
+      <br>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link active">Katalog Produk</a>
+        <a href="caption.html" class="nav-link">Pembuat Caption</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <h2>Pencarian &amp; Filter Produk</h2>
+      
+      <div class="filter-container">
+        <div class="filter-group">
+          <label for="searchInput">Cari Nama Barang:</label>
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Ketik nama barang..."
+          >
+        </div>
+
+        <div class="filter-group">
+          <label for="categorySelect">Kategori Barang:</label>
+          <select id="categorySelect">
+            <option value="all">Semua Kategori</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Daftar Produk (API DummyJSON)</h2>
+      <p id="statusInfo">Memuat data dari API...</p>
+
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
