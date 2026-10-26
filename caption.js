@@ -1,6 +1,11 @@
+const templateKoleksi = {
+  promo: "🔥 PROMO HARI INI! Dapatkan {nama_barang} kualitas terbaik hanya dengan harga ${harga}. Kategori: {kategori}. {catatan} Yuk buruan pesan sebelum kehabisan!",
+  flash_sale: "⚡ FLASH SALE TERBATAS! Khusus hari ini {nama_barang} banting harga jadi cuma ${harga}! Kategori: {kategori}. {catatan} Klik link di bio untuk order sekarang!",
+  new_arrival: "✨ NEW ARRIVAL! Telah hadir produk terbaru {nama_barang} untuk kategori {kategori}. Miliki sekarang juga hanya dengan harga ${harga}. {catatan}"
+};
+
 const captionForm = document.getElementById('captionForm');
 const selectTemplate = document.getElementById('selectTemplate');
-const previewTemplateText = document.getElementById('previewTemplateText');
 
 const inputNama = document.getElementById('inputNama');
 const inputHarga = document.getElementById('inputHarga');
@@ -15,12 +20,6 @@ const btnReset = document.getElementById('btnReset');
 const btnCopy = document.getElementById('btnCopy');
 const copyStatus = document.getElementById('copyStatus');
 
-function updateTemplatePreview() {
-  const templateKey = selectTemplate.value;
-  previewTemplateText.textContent = templateKoleksi[templateKey];
-}
-
-selectTemplate.addEventListener('change', updateTemplatePreview);
 function bacaParameterURL() {
   const params = new URLSearchParams(window.location.search);
   const nama = params.get('nama');
@@ -35,7 +34,6 @@ function bacaParameterURL() {
     generateCaption();
   }
 }
-
 
 function generateCaption() {
   const nama = inputNama.value.trim();
@@ -66,7 +64,7 @@ function generateCaption() {
 
   if (!isValid) return;
 
-  let templateTeks = templateKoleksi[templateKey];
+  let templateTeks = templateKoleksi[templateKey] || templateKoleksi.promo;
 
   const formatCatatan = catatan ? `(${catatan})` : '';
 
@@ -77,7 +75,6 @@ function generateCaption() {
     .replaceAll('{catatan}', formatCatatan);
 
   outputCaption.textContent = hasilCaption;
-
   outputCaption.style.color = '#111111';
   outputCaption.style.fontWeight = 'bold';
   outputCaption.style.lineHeight = '1.6';
@@ -88,6 +85,12 @@ function generateCaption() {
 captionForm.addEventListener('submit', function(event) {
   event.preventDefault();
   generateCaption();
+});
+
+selectTemplate.addEventListener('change', function() {
+  if (inputNama.value.trim() !== '' && inputHarga.value.trim() !== '') {
+    generateCaption();
+  }
 });
 
 inputNama.addEventListener('input', function() {
@@ -116,8 +119,6 @@ btnReset.addEventListener('click', function() {
   outputCaption.style.color = '#333333';
   outputCaption.style.fontWeight = 'normal';
   copyStatus.textContent = '';
-
-  updateTemplatePreview();
 });
 
 btnCopy.addEventListener('click', function() {
@@ -136,5 +137,4 @@ btnCopy.addEventListener('click', function() {
   });
 });
 
-updateTemplatePreview();
 bacaParameterURL();
